@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var name: String = ""
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TextField("Name", text: $name)
+            MyCustomView(greeting: "Hello", greeted: name)
+            MyCustomView(greeting: "Bonjour", greeted: "Chelsea")
+            MyCustomView(greeting: "Kiaora", greeted: "friends")
         }
         .padding()
     }
